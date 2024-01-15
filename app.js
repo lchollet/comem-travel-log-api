@@ -9,12 +9,10 @@ const apiRouter = require('./api');
 const config = require('./config');
 
 const app = express();
-var cors = require('cors');
 const expressLogger = config.logger('express');
 
 // Log HTTP requests
 app.use(connectLogger(expressLogger, { level: 'trace' }));
-app.use(cors());
 
 // Parse the body of JSON requests
 app.use(express.json());
